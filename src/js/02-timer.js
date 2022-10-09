@@ -36,8 +36,9 @@ function makeTimer() {
   setInterval(() => {
     date = new Date();
     ms = selectedTime - date.getTime();
+    if (ms < 0) return;
     convertMs(ms);
-  });
+  }, 1000);
 }
 
 function convertMs(ms) {
